@@ -1,90 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>초대 페이지</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<!-- Google 둥근 폰트 -->
-<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<title>초대 입장</title>
+<meta name="referrer" content="no-referrer">
 
 <style>
-    body {
-        background: linear-gradient(180deg, #ffd7ec, #c8e9ff); /* 핑크 → 하늘색 파스텔 */
-        font-family: 'Jua', sans-serif; /* 동글동글 폰트 */
-        text-align: center;
-        padding-top: 80px;
-        color: #555;
-    }
+  @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
-    .box {
-        background: white;
-        width: 330px;
-        margin: auto;
-        padding: 25px;
-        border-radius: 25px;
-        box-shadow: 0px 4px 14px rgba(0,0,0,0.15);
-        animation: pop 0.4s ease-in-out;
-        border: 3px solid #ffe3f3;
-    }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #aeeaff;
+    font-family: 'Jua', sans-serif;
+  }
 
-    @keyframes pop {
-        0% { transform: scale(0.7); opacity: 0; }
-        100% { transform: scale(1); opacity: 1; }
-    }
+  .wrap {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    h2 {
-        font-size: 26px;
-        margin-bottom: 5px;
-        color: #ff7fa8;
-    }
+  .card {
+    background: white;
+    padding: 28px;
+    border-radius: 22px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+    width: 90%;
+    max-width: 360px;
+    text-align: center;
+  }
 
-    p {
-        font-size: 16px;
-        margin-top: 0;
-        color: #777;
-    }
+  h1 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #444;
+    font-size: 26px;
+  }
 
-    input {
-        width: 85%;
-        padding: 12px;
-        margin-top: 15px;
-        border-radius: 20px;
-        border: 2px solid #ffc2df;
-        outline: none;
-        font-size: 17px;
-        transition: 0.2s;
-        background: #fff7fb;
-    }
+  input[type="password"] {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: 2px solid #cccccc;
+    font-size: 17px;
+    outline: none;
+    margin-bottom: 14px;
+  }
 
-    input:focus {
-        border-color: #ff8fbd;
-        background: #fff0f8;
-    }
+  button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 14px;
+    background: #ff68b0;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
 
-    button {
-        width: 90%;
-        padding: 14px;
-        margin-top: 20px;
-        background: #ff96c6;
-        color: white;
-        font-size: 18px;
-        border: none;
-        border-radius: 25px;
-        cursor: pointer;
-        transition: 0.2s;
-        box-shadow: 0px 4px 8px rgba(255, 150, 198, 0.4);
-    }
-
-    button:hover {
-        background: #ff7ab8;
-        transform: translateY(-2px);
-    }
+  button:hover {
+    background: #ff4fa4;
+  }
 </style>
+</head>
 
+<body>
+<div class="wrap">
+  <div class="card">
+    <h1>비밀번호 입력</h1>
+    <input id="pw" type="password" placeholder="비밀번호를 입력하세요">
+    <button onclick="go()">입장하기</button>
+  </div>
+</div>
 
 <script>
-
-
   /* 비밀번호 */
   const PASSWORD = "333333";
 
@@ -106,23 +100,10 @@
       window.location.href = app;              // 앱으로 바로 실행
     } else {
       document.getElementById("pw").value = "";
-      alert("비밀번호가 달라요! 다시 확인해줘 💕");
+      alert("비밀번호가 틀렸습니다!");
     }
   }
-
-  
 </script>
-
-</head>
-<body>
-
-    <div class="box">
-        <h2>💖 초대 페이지 💖</h2>
-        <p>비밀번호를 입력해주세요</p>
-
-        <input type="password" id="pw" placeholder="비밀번호 입력">
-        <button onclick="goApp()">들어가기 💞</button>
-    </div>
 
 </body>
 </html>
